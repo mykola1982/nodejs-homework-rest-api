@@ -2,6 +2,8 @@ const express = require("express");
 
 const router = express.Router();
 
+const { controllersContacts } = require("../../controllers");
+
 const {
   getAllContacts,
   getByIdContact,
@@ -9,11 +11,11 @@ const {
   updateByIdContact,
   updateStatusContact,
   deleteByIdContact,
-} = require("../../controllers");
+} = controllersContacts;
 
 const { validateBody, isValidId } = require("../../middlewares");
 
-const { schemas } = require("../../models");
+const { schemas } = require("../../models/contact");
 
 router.get("/", getAllContacts);
 
